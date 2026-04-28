@@ -94,6 +94,7 @@ body{
     cursor: pointer;
     gap: 10px;
     background-color: transparent;
+    transition: .5s;
 }
 
 .bottom-section .left .logout button:hover{
@@ -118,6 +119,7 @@ body{
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    transition: .5s;
 }
 
 .bottom-section .left ul li .icon{
@@ -157,6 +159,7 @@ body{
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: .5s;
 }
 
 .bottom-section .right .stats .card:hover{
@@ -240,6 +243,10 @@ body{
     padding: 10px 15px; 
     text-align: left;
     border-bottom: 1px solid rgba(26, 24, 24, 0.2);
+}
+
+.appointments .table tr{
+    transition: .5s;
 }
 
 .appointments .table tr:hover {
