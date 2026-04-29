@@ -55,6 +55,12 @@
                     </li>
                     <li>
                         <div class="icon">
+                            <img src="" alt="appointments icon">
+                        </div>
+                        <a href="appointments.html">Appointments</a>
+                    </li>
+                    <li>
+                        <div class="icon">
                             <img src="images/billing2.svg" alt="patients icon">
                         </div>
                         <a href="billing.php">Billing</a>
