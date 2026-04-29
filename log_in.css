@@ -94,3 +94,10 @@ input:focus {
 button:hover {
     background-color: #0a6cb0;
 }
+#page{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    
+}
