@@ -40,7 +40,15 @@
                             <img src="images/patients3.svg" alt="patients icon">
                         </div>
                         <a href="patients.html">Patients</a>
-                    </li>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <img src="images/stethoscope.svg" alt="stethoscope icon">
+                            </div>
+                            <a href ="doctors.html">Doctors</a>
+                        </li>
+                    
                 </ul>  
 
                 <div class="logout">
