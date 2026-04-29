@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="billing.css">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <div class="container">
+     <div class="container">
         <div class="top-section">
             <div class="left">
                 <div class="logo">
@@ -39,7 +40,7 @@
                         <div class="icon">
                             <img src="images/patients3.svg" alt="patients icon">
                         </div>
-                        <a href="patients.html">Patients</a>
+                        <a href="patients.php">Patients</a>
                     </li>
                     <li>
                         <div class="icon">
@@ -69,79 +70,36 @@
             
 
             <div class="right">
+    
                 <div class="stats">
                     <div class="card">
                         <div class="card-left">
                             <div class="title">
-                               Total Patients
-                            </div>
-                            <div class="number">
-                                50
+                                Billing
                             </div>
                         </div>
 
-                        <div class="icon-patients">
-                            <img src="images/patients.svg" alt="patients icon">
-                        </div>
-                    </div>
-                  
-                    <div class="card">
-                        <div class="card-left">
-                            <div class="title">
-                               Total Doctors
-                            </div>
-                            <div class="number">
-                                10
-                            </div>
-                        </div>
-
-                        <div class="icon-stethoscope">
-                            <img src="images/stethoscope.svg" alt="stethoscope icon">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-left">
-                            <div class="title">
-                               Total Appointments
-                            </div>
-                            <div class="number">
-                                100
-                            </div>
-                        </div>
-
-                        <div class="icon-calendar">
-                            <img src="images/calendar.svg" alt="calendar icon">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-left">
-                            <div class="title">
-                               Pending Bills
-                            </div>
-                            <div class="number">
-                                4
-                            </div>
-                        </div>
-
-                        <div class="icon-money">
-                            <img src="images/money.svg" alt="patients icon">
-                        </div>
+                        <button class="add-bill">
+                            <span>+</span>
+                            <span>Add</span>
+                        </button>
                     </div>
                 </div>
 
                 <div class="appointments">
                     <div class="title">
-                        Recent Appointments
+                        Recent Bills
                     </div>
 
                     <div class="table">
                         <table>
                             <tr class="t-header">
-                                <td>Doctor</td>
                                 <td>Patient</td>
-                                <td>Date</td>
-                                <td>Time</td>
+                                <td>Amount</td>
+                                <td>Description</td>
                                 <td>Status</td>
+                                <td>Payment Date</td>
+                                <td>Actions</td>
                             </tr>
 
                             <tr>
@@ -149,43 +107,54 @@
                                     Stuart Sindani
                                 </td>
                                 <td>
-                                    Dr. Mike Makina
+                                    K12,350
                                 </td>
                                 <td>
-                                    2023-01-01
+                                    X-ray and Urine analysis
                                 </td>
                                 <td>
-                                    10:00
-                                </td>
-                                <td>
-                                    <div class="status">
-                                        completed
+                                    <div class="status" style="color: rgb(101, 101, 233);">
+                                        pending
                                     </div>
                                 </td>
+                                <td>
+                                    2026-05-08
+                                </td>
+                                <td class="edit-delete-icons">
+                                    <img src="images/edit.svg" alt="edit image">
+                                    <img src="images/bin.svg" alt="bin image">
+                                </td>
                             </tr>
+
+
                             <tr>
                                 <td>
-                                    Precious Mawaya
+                                    John Doe
                                 </td>
                                 <td>
-                                    Dr. Mike Makina
+                                    K7,350
                                 </td>
                                 <td>
-                                    2023-01-01
+                                    Consultation
                                 </td>
                                 <td>
-                                    10:00
-                                </td>
-                                <td>
-                                    <div class="status">
-                                        scheduled
+                                    <div class="status" style="background: rgb(223, 255, 223);color:rgb(3, 163, 3);">
+                                        Paid
                                     </div>
                                 </td>
+                                <td>
+                                    2026-05-05
+                                </td>
+                                <td class="edit-delete-icons">
+                                    <img src="images/edit.svg" alt="edit image">
+                                    <img src="images/bin.svg" alt="bin image">
+                                </td>
                             </tr>
+                        
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-</body>
+    </body>
 </html>
