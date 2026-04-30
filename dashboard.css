@@ -150,7 +150,7 @@ body{
 }
 
 .bottom-section .right .stats .card {
-    border: solid 2px rgba(26, 24, 24, 0.096);
+    /* border: solid 2px rgba(124, 47, 47, 0.096); */
     border-radius: 10px;
     background-color: white;
     display: flex;
@@ -159,8 +159,12 @@ body{
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.4s;
+    cursor: pointer;
 }
-
+.bottom-section .right .stats .card:hover {
+    border:1px solid rgb(101, 101, 233);
+}
 
 .bottom-section .right .stats .card .card-left{
     display: flex;

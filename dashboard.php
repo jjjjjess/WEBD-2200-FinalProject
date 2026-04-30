@@ -29,37 +29,7 @@
         <div class="bottom-section">
             <div class="left">
                 <ul>
-        
-                    <li>
-                        <div class="icon">
-                            <img src="images/dashboard.svg" alt="dashboard icon">
-                        </div>
-                        <a href="dashboard.php">Dashboard</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <img src="images/patients3.svg" alt="patients icon">
-                        </div>
-                        <a href="patients.php">Patients</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <img src="" alt="medical_records icon">
-                        </div>
-                        <a href="medical_records.php">Medical Records</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <img src="images/billing2.svg" alt="patients icon">
-                        </div>
-                        <a href="billing.php">Billing</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <img src="images/reports.svg" alt="patients icon">
-                        </div>
-                        <a href="reports.php">Reports</a>
-                    </li>
+                    <?php include('menu.php');?>
                 </ul>  
 
                 <div class="logout">
@@ -165,7 +135,7 @@
                                     10:00
                                 </td>
                                 <td>
-                                    <div class="status">
+                                    <div class="status" style="color: rgb(101, 101, 233);">
                                         completed
                                     </div>
                                 </td>
@@ -184,7 +154,7 @@
                                     10:00
                                 </td>
                                 <td>
-                                    <div class="status">
+                                    <div class="status" style="color: #bca40c; background: #fff4ab;">
                                         scheduled
                                     </div>
                                 </td>
