@@ -29,17 +29,36 @@
         <div class="bottom-section">
             <div class="left">
                 <ul>
+        
                     <li>
                         <div class="icon">
                             <img src="images/dashboard.svg" alt="dashboard icon">
                         </div>
-                        <a href="dashboard.html">Dashboard</a>
+                        <a href="dashboard.php">Dashboard</a>
                     </li>
                     <li>
                         <div class="icon">
                             <img src="images/patients3.svg" alt="patients icon">
                         </div>
-                        <a href="patients.html">Patients</a>
+                        <a href="patients.php">Patients</a>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="" alt="medical_records icon">
+                        </div>
+                        <a href="medical_records.php">Medical Records</a>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="images/billing2.svg" alt="patients icon">
+                        </div>
+                        <a href="billing.php">Billing</a>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="images/reports.svg" alt="patients icon">
+                        </div>
+                        <a href="reports.php">Reports</a>
                     </li>
                 </ul>  
 
