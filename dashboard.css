@@ -159,12 +159,8 @@ body{
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    transition: .5s;
 }
 
-.bottom-section .right .stats .card:hover{
-    transform: translateY(-2px);
-}
 
 .bottom-section .right .stats .card .card-left{
     display: flex;

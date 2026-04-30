@@ -101,7 +101,7 @@
                         <table>
                             <tr class="t-header">
                                 <td>Doctor</td>
-                                <td>Appointments</td>
+                                <td class="td">Appointments</td>
                             </tr>
 
                             <tr>

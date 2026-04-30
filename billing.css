@@ -1,6 +1,3 @@
-.bottom-section .right .stats .card:hover{
-    transform: unset;
-}
 
 .bottom-section .right .stats .card .card-left .title{
     font-size: 20px;
