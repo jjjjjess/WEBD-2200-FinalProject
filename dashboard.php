@@ -33,26 +33,22 @@
                         <div class="icon">
                             <img src="images/dashboard.svg" alt="dashboard icon">
                         </div>
-                        <a href="dashboard.php">Dashboard</a>
+                        <a href="dashboard.html">Dashboard</a>
                     </li>
                     <li>
                         <div class="icon">
                             <img src="images/patients3.svg" alt="patients icon">
                         </div>
                         <a href="patients.html">Patients</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <img src="images/billing2.svg" alt="patients icon">
-                        </div>
-                        <a href="billing.php">Billing</a>
-                    </li>
-                     <li>
-                        <div class="icon">
-                            <img src="images/reports.svg" alt="patients icon">
-                        </div>
-                        <a href="reports.php">Reports</a>
-                    </li>
+                        </li>
+
+                        <li>
+                            <div class="icon">
+                                <img src="images/stethoscope.svg" alt="stethoscope icon">
+                            </div>
+                            <a href ="doctors.html">Doctors</a>
+                        </li>
+                    
                 </ul>  
 
                 <div class="logout">

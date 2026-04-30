@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-     <div class="container">
+    <div class="container">
         <div class="top-section">
             <div class="left">
                 <div class="logo">
@@ -38,9 +38,21 @@
                     </li>
                     <li>
                         <div class="icon">
+                            <img src="" alt="departments icon">
+                        </div>
+                        <a href="departments.php">Departments</a>
+                    </li>
+                    <li>
+                        <div class="icon">
                             <img src="images/patients3.svg" alt="patients icon">
                         </div>
                         <a href="patients.php">Patients</a>
+                    </li>
+                    <li>
+                            <div class="icon">
+                                <img src="" alt="medical_records icon">
+                            </div>
+                            <a href="medical_records.php">Medical Records</a>
                     </li>
                     <li>
                         <div class="icon">
@@ -156,5 +168,5 @@
                 </div>
             </div>
         </div>
-    </body>
+</body>
 </html>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="reports.css">
-    <link rel="stylesheet" href="dashboard.css">
+    <title>Patients page</title>
+                 
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="billing.css">
 </head>
 <body>
      <div class="container">
@@ -38,21 +39,9 @@
                     </li>
                     <li>
                         <div class="icon">
-                            <img src="" alt="departments icon">
-                        </div>
-                        <a href="departments.php">Departments</a>
-                    </li>
-                    <li>
-                        <div class="icon">
                             <img src="images/patients3.svg" alt="patients icon">
                         </div>
-                        <a href="patients.html">Patients</a>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <img src="" alt="medical_records icon">
-                        </div>
-                        <a href="medical_records.php">Medical Records</a>
+                        <a href="patients.php">Patients</a>
                     </li>
                     <li>
                         <div class="icon">
@@ -79,63 +68,88 @@
                 </div>      
             </div>
 
+            
+
             <div class="right">
+    
                 <div class="stats">
                     <div class="card">
                         <div class="card-left">
-                            <div class="title" style="opacity: .8;">
-                               Revenue Collected
-                            </div>
-                            <div class="number" style="color: rgb(3, 163, 3);">
-                                K502,509.00
+                            <div class="title">
+                                Patients
                             </div>
                         </div>
-                    </div>
-                  
-                    <div class="card">
-                        <div class="card-left">
-                            <div class="title" style="opacity: .8;">
-                               Revenue Pending
-                            </div>
-                            <div class="number" style="color: #bca510;">
-                                K304,689.89
-                            </div>
-                        </div>
+
+                        <button class="add-bill">
+                            <span>+</span>
+                            <span>Add</span>
+                        </button>
                     </div>
                 </div>
 
                 <div class="appointments">
-                    <div class="title">
-                        Appointments per Doctor
-                    </div>
+               
 
                     <div class="table">
                         <table>
                             <tr class="t-header">
-                                <td>Doctor</td>
-                                <td class="td">Appointments</td>
+                                <td>Name</td>
+                                <td>Gender</td>
+                                <td>DOB</td>
+                                <td>Phone</td>
+                                <td>Blood</td>
+                                <td>Actions</td>
                             </tr>
 
                             <tr>
                                 <td>
-                                    Dr. Stuart Sindani
+                                    Mirriam Moyo
                                 </td>
                                 <td>
-                                    4
+                                    Female
+                                </td>
+                                <td>
+                                    30-09-1990
+                                </td>
+                                <td>
+                                   09988989898
+                                </td>
+                                <td>
+                                    O+
+                                </td>
+                                <td class="edit-delete-icons">
+                                    <img src="images/edit.svg" alt="edit image">
+                                    <img src="images/bin.svg" alt="bin image">
                                 </td>
                             </tr>
+
+
                             <tr>
                                 <td>
-                                    Dr. Precious Mawaya
+                                    John Doe
                                 </td>
                                 <td>
-                                    3
+                                    Male
+                                </td>
+                                <td>
+                                    15-02-2000
+                                </td>
+                                <td>
+                                    0884529758
+                                </td>
+                                <td>
+                                    AB
+                                </td>
+                                <td class="edit-delete-icons">
+                                    <img src="images/edit.svg" alt="edit image">
+                                    <img src="images/bin.svg" alt="bin image">
                                 </td>
                             </tr>
+                        
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-</body>
+    </body>
 </html>
