@@ -1,3 +1,31 @@
+<?php
+
+    // require_once('db_connect.php');
+    $conn = mysqli_connect('localhost', "root", '', 'hospital_sys',3307);
+
+    // 2. Check if the connection worked
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    #doctors name
+
+    $sql = " SELECT 
+        b.id,
+        p.name,
+        b.amount, 
+        b.description, 
+        b.status,
+        b.payment_date
+        FROM 
+        billing b JOIN patients p ON b.id = p.id 
+        ORDER BY b.id ASC
+        ";   
+
+    $result = mysqli_query($conn, $sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,56 +106,40 @@
                                 <td>Payment Date</td>
                                 <td>Actions</td>
                             </tr>
-
-                            <tr>
-                                <td>
-                                    Stuart Sindani
-                                </td>
-                                <td>
-                                    K12,350
-                                </td>
-                                <td>
-                                    X-ray and Urine analysis
-                                </td>
-                                <td>
-                                    <div class="status" style="color: rgb(101, 101, 233);">
-                                        pending
-                                    </div>
-                                </td>
-                                <td>
-                                    2026-05-08
-                                </td>
-                                <td class="edit-delete-icons">
-                                    <img src="images/edit.svg" alt="edit image">
-                                    <img src="images/bin.svg" alt="bin image">
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    John Doe
-                                </td>
-                                <td>
-                                    K7,350
-                                </td>
-                                <td>
-                                    Consultation
-                                </td>
-                                <td>
-                                    <div class="status" style="background: rgb(223, 255, 223);color:rgb(3, 163, 3);">
-                                        Paid
-                                    </div>
-                                </td>
-                                <td>
-                                    2026-05-05
-                                </td>
-                                <td class="edit-delete-icons">
-                                    <img src="images/edit.svg" alt="edit image">
-                                    <img src="images/bin.svg" alt="bin image">
-                                </td>
-                            </tr>
-                        
+                            <?php if($result->num_rows > 0):?>
+                                <?php while($row = $result->fetch_assoc()):?>
+                                    <tr>
+                                        <td>
+                                            <?= $row['name'] ?>
+                                        </td>
+                                        <td>
+                                            K<?= $row['amount'] ?>                                            
+                                        </td>
+                                        <td>
+                                            <?= $row['description']?>
+                                        </td>
+                                        <td>
+                                           <?php if($row["status"] === "Paid"):?>
+                                                <div class="status" style="color: rgb(6, 204, 45); background:rgb(205, 255, 215);">
+                                                    <?= $row["status"]; ?> 
+                                                </div>
+                                            <?php elseif($row["status"] === "Pending"):?>
+                                                <div class="status" style="color: rgb(101, 101, 233);">
+                                                       <?= $row["status"]; ?> 
+                                                </div>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <?= $row['payment_date']?>                                            
+                                        </td>
+                                        <td class="edit-delete-icons">
+                                            <a href="update.php?id<?= $row['id']?>?>"><img src="images/edit.svg" alt="edit image"></a>
+                                            <a href="delete.php?id=<?= $row['id'];?>&table=billing" onclick="return confirm('Delete this record?')">
+                                            <img src="images/bin.svg" alt="bin image"></a>
+                                        </td>
+                                    </tr>
+                                <?php endwhile;?>
+                            <?php endif;?>
                         </table>
                     </div>
                 </div>
