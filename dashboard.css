@@ -150,7 +150,7 @@ body{
 }
 
 .bottom-section .right .stats .card {
-    /* border: solid 2px rgba(124, 47, 47, 0.096); */
+    border: solid 1px transparent;
     border-radius: 10px;
     background-color: white;
     display: flex;
