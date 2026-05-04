@@ -1,21 +1,19 @@
 <?php
 $host = 'localhost';
 $db   = 'hospital_sys';
-$user = 'root'; 
-$pass = '';     
-$charset = 'utf8mb4';
+$user = 'root';
+$pass = '';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
+// 1. Establish the connection
+$conn = mysqli_connect($host, $user, $pass, $db);
 
-try {
-     $pdo = new PDO($dsn, $user, $pass, $options);
-     // echo "Connected successfully!"; //we are going to uncomment inorder to test
-} catch (\PDOException $e) {
-     throw new \PDOException($e->getMessage(), (int)$e->getCode());
+// 2. Check if the connection worked
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+
+// 3. Set the charset (good practice for special characters)
+mysqli_set_charset($conn, "utf8mb4");
+
+// echo "Connected successfully!"; 
 ?>
