@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $sql = "SELECT * FROM users WHERE email ='$userid'";
         $result = mysqli_query($conn, $sql);
         //if any user matches it should then check from the row if the passwords match aswell.
-        // second if statement checks if the user has entered a valid password.git 
+        // second if statement checks if the user has entered a valid password.
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
             if ($row['password'] == $passcode) 
@@ -18,24 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 $_SESSION['user_id'] = $row['email'];
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['role'] = $row['role'];
-                // if ($row['role'] == "Admin") 
-                // {
-                //     header("Location: admin_test.php");
-                //     exit;
-                // } 
-                // elseif ($row['role'] == "Doctor") 
-                // {
-                //     header("Location: doctor_test.php");
-                //     exit;
-                // } 
-                // elseif ($row['role'] == "Nurse") {
-                //     header("Location: nurse_test.php");
-                //     exit;
-                // }
-                // elseif($row['role']== "Receptionist")
-                // {
-                //     header("Location:");
-                // }
+        
                 header("Location:dashboard.php");
             }
             else
