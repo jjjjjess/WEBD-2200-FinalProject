@@ -1,4 +1,5 @@
 <?php
+    session_start();
     // require_once('db_connect.php');
 
     $conn = mysqli_connect('localhost', "root", '', 'hospital_sys',3307);
@@ -15,14 +16,11 @@
 
             $result = mysqli_query($conn, $sql);
 
-            if($result){
-                header('location:billing.php');
-            } else {
-                echo "failed to insert";
-            }
-        } else {
-            echo "variables not set";
-        };
+            $_SESSION['op_success'] = $result ? true : false;
+            header('location:billing.php');
+            exit();
+
+        }
     }
 
     

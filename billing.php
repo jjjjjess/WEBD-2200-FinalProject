@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     // require_once('db_connect.php');
     $conn = mysqli_connect('localhost', "root", '', 'hospital_sys',3307);
 
@@ -19,7 +19,8 @@
         b.payment_date
         FROM 
         billing b JOIN patients p ON b.id = p.id 
-        ORDER BY b.id ASC
+        ORDER BY b.id DESC
+        LIMIT 5
         ";   
 
     $result = mysqli_query($conn, $sql);
@@ -36,6 +37,17 @@
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+    <?php 
+    if(isset($_SESSION['op_success'])){
+        if($_SESSION['op_success'] === true){
+            include('alert-messages/operation_success.php');
+        } elseif ($_SESSION['op_success'] === false){
+            include('alert-messages/operation_failure.php');
+        };
+
+        unset($_SESSION['op_success']);
+    };   
+    ?>    
     <div class="container">
         <div class="top-section">
             <div class="left">

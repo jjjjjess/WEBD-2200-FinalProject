@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="appointments.css">
         <title>Appointments</title>
     </head>
     <body>
@@ -47,16 +48,14 @@
                     </div>
 
                     <div class="table">
-                        <form method="POST">
+                        <form method="POST" action="">
                         <table>
                             <tr class="t-header">
                                 <td>Full Name</td>
                                 <td>Date of Birth</td>
-                                <td>Patient ID</td>
-                                <td>Department</td>
-                                <td>Date</td>
-                                <td>Time</td>
+                                <td>Patient ID</td>  
                             </tr>
+
                             <tr>
                                 <td>
                                     <input type="text" required id="fname">
@@ -67,6 +66,14 @@
                                 <td>
                                     <input type="text" id="id" required>
                                 </td>
+                            </tr>
+
+                            <tr class="t-header">
+                                <td>Department</td>
+                                <td>Date</td>
+                                <td>Time</td>
+                            </tr>
+                            <tr>                               
                                 <td>
                                     <select id="department" required>
                                         <option placeholder>Select a department</option>
