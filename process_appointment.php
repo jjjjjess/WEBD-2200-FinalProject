@@ -1,6 +1,6 @@
 <?php
 //Appointment processing code
-include('db_connect.php');
+include('db_connect.php'); //includes database connection code file
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data
     $fullName = mysqli_real_escape_string($conn, $_POST['fname']);
