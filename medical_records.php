@@ -1,6 +1,13 @@
 <?php 
 include 'db_connect.php';
 
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+
 //$output = $conn->query("SELECT * FROM medical_records");
 
 $medical_sql = "SELECT  
@@ -39,15 +46,16 @@ $output = $conn ->query($medical_sql);
             <div class="top-section">
                 <div class="left">
                     <div class="logo">
-                        <img src="images/logo1.svg" alt="logo">Medicare
+                        <img src="images/logo1.svg" alt="logo">
                     </div>
+                    NdataCare
                 </div>
                 <div class="right">
                     <div class="user">
-                        Welcome
+                        Welcome, <?php echo $_SESSION['username']; ?>
                     </div>
                     <div class="role">
-                        Admin
+                        <?php echo $_SESSION['role']; ?>
                     </div>
                 </div>
             </div>
@@ -58,10 +66,11 @@ $output = $conn ->query($medical_sql);
                     </ul>  
 
                     <div class="logout">
-                        <button>
+                        <button onclick="return confirm('Are you sure you want to log out?')">
                             <div class="icon">
                                 <img src="images/logout2.svg" alt="logout icon">
-                            </div>Logout
+                            </div>
+                            <a style="text-decoration: none; color: #1D293D;" href="dashboardLogout.php">Logout</a>
                         </button>
                     </div>      
                 </div>

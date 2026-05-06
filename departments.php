@@ -1,3 +1,29 @@
+<?php 
+include 'db_connect.php';
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+$username_login_sql = "SELECT 
+                        
+";
+
+//$username_login = $_SESSION[''];
+
+
+$department_sql = " SELECT 
+                        d.name AS dep_name,
+                        d.description AS dep_description
+                    FROM departments d
+
+";
+
+$output_dep = $conn->query($department_sql);
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,15 +39,16 @@
             <div class="top-section">
                 <div class="left">
                     <div class="logo">
-                        <img src="images/logo1.svg" alt="logo">Medicare
+                        <img src="images/logo1.svg" alt="logo">
                     </div>
+                    NdataCare
                 </div>
                 <div class="right">
                     <div class="user">
-                        Welcome, Dr. Mike Makina
+                         Welcome, <?php echo $_SESSION['username']; ?>
                     </div>
                     <div class="role">
-                        Admin
+                        <?php echo $_SESSION['role']; ?>
                     </div>
                 </div>
             </div>
@@ -32,16 +59,17 @@
                     </ul>  
 
                     <div class="logout">
-                        <button>
+                        <button onclick="return confirm('Are you sure you want to log out?')">
                             <div class="icon">
                                 <img src="images/logout2.svg" alt="logout icon">
-                            </div>Logout
+                            </div>
+                            <a style="text-decoration: none; color: #1D293D;" href="dashboardLogout.php">Logout</a>
                         </button>
                     </div>      
                 </div>
 
                 <div class="right">
-                    <div class="stats">
+                    <!--<div class="stats">
                         <div class="card">
                             <div class="card-left">
                                 <div class="title">
@@ -52,7 +80,7 @@
                                 <span>+</span><span>Add</span>
                             </button>
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="appointments">
                         <div class="title">
@@ -64,54 +92,18 @@
                                 <tr class="t-header">
                                     <td>Name</td>
                                     <td>Description</td>
-                                    <td>Head Doctor</td>
+                                    <!--<td>Head Doctor</td>
                                     <td>Total Doctors</td>
                                     <td>Total Nurses</td>
-                                    <td>Actions</td>
+                                    <td>Actions</td>-->
                                 </tr>
-
+                                <?php while($row = $output_dep->fetch_assoc()){ ?>
                                 <tr>
-                                    <td>
-                                        Cardiology
-                                    </td>
-                                    <td>
-                                        Heart and blood vessels
-                                    </td>
-                                    <td>
-                                        Dr. Mike Makina
-                                    </td>
-                                    <td>
-                                        10
-                                    </td>
-                                    <td>
-                                        15
-                                    </td>
-                                    <td class="edit-delete-icons">
-                                        <img src="images/edit.svg" alt="edit image">
-                                        <img src="images/bin.svg" alt="bin image">
-                                    </td>
+                                    <td><?php echo $row['dep_name']; ?></td>
+                                    <td><?php echo $row['dep_description']; ?></td>
+                                
                                 </tr>
-                                <tr>
-                                    <td>
-                                        Neurology
-                                    </td>
-                                    <td>
-                                        Brain, spinal cord, and nervous system
-                                    </td>
-                                    <td>
-                                        Dr. Precious Mawaya
-                                    </td>
-                                    <td>
-                                        5
-                                    </td>
-                                    <td>
-                                        10
-                                    </td>
-                                    <td class="edit-delete-icons">
-                                        <img src="images/edit.svg" alt="edit image">
-                                        <img src="images/bin.svg" alt="bin image">
-                                    </td>
-                                </tr>
+                                <?php } ?>
                         
                             </table>
                         </div>
