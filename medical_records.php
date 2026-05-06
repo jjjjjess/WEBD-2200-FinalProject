@@ -1,3 +1,29 @@
+<?php 
+include 'db_connect.php';
+
+//$output = $conn->query("SELECT * FROM medical_records");
+
+$medical_sql = "SELECT  
+                    p.name AS patient_name,
+                    d.name AS doctor_name,
+                    m.diagnosis,
+                    m.treatment,
+                    m.recorded_at
+                FROM medical_records m
+                JOIN patients p ON m.patient_id = p.id
+                JOIN doctors d ON m.doctor_id = d.id
+                LIMIT 10";
+
+$output = $conn ->query($medical_sql);
+                                
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -53,54 +79,24 @@
                                     <td>Patient</td>
                                     <td>Doctor</td>
                                     <td>Diagnosis</td>
-                                    <td>Visit Date</td>
-                                    <td>Time</td>
+                                    <td>Treated</td>
+                                    <td>Visit Date & Time</td>
                                     <td>Actions</td>
                                 </tr>
-
+                                    <?php while($row = $output->fetch_assoc()){ ?>
                                 <tr>
-                                    <td>
-                                        Stuart Sindani
-                                    </td>
-                                    <td>
-                                        Dr. Mike Makina
-                                    </td>
-                                    <td>
-                                        Broken hip and UTI
-                                    </td>
-                                    <td>
-                                        2023-01-01
-                                    </td>
-                                    <td>
-                                        10:00
-                                    </td>
+                                    <td><?php echo $row['patient_name']; ?></td>
+                                    <td><?php echo $row['doctor_name']; ?></td>
+                                    <td><?php echo $row['diagnosis']; ?></td>
+                                    <td><?php echo $row['treatment']; ?></td>
+                                    <td><?php echo $row['recorded_at']; ?></td>
                                     <td class="edit-delete-icons">
                                         <img src="images/edit.svg" alt="edit image">
                                         <img src="images/bin.svg" alt="bin image">
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        John Doe
-                                    </td>
-                                    <td>
-                                        Dr. Mike Makina
-                                    </td>
-                                    <td>
-                                        Malaria
-                                    </td>
-                                    <td>
-                                        2023-01-01
-                                    </td>
-                                    <td>
-                                        10:00
-                                    </td>
-                                    <td class="edit-delete-icons">
-                                        <img src="images/edit.svg" alt="edit image">
-                                        <img src="images/bin.svg" alt="bin image">
-                                    </td>
-                                </tr>
-                        
+                                <?php } ?>
+                            
                             </table>
                         </div>
 
