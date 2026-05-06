@@ -200,7 +200,7 @@ $departments_result = mysqli_query($conn, $departments_query);
                 <div class="logo">
                     <img src="images/logo1.svg" alt="logo">
                 </div>
-                MediCare
+                NdataCare
             </div>
             <div class="right">
                 <div class="user">

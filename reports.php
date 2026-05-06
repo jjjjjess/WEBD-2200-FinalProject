@@ -1,7 +1,7 @@
 <?php 
 
-     // require_once('db_connect.php');
-    $conn = mysqli_connect('localhost', "root", '', 'hospital_sys',3307);
+    require_once('db_connect.php');
+    // $conn = mysqli_connect('localhost', "root", '', 'hospital_sys',3307);
 
     // 2. Check if the connection worked
     if (!$conn) {
@@ -115,7 +115,7 @@
                 <div class="logo">
                     <img src="images/logo1.svg" alt="logo">
                 </div>
-                MediCare
+                NdataCare
             </div>
             <div class="right">
                 <div class="user">
@@ -133,16 +133,26 @@
                 <ul>
                    <?php include('menu.php');?>
                 </ul>  
+               <div class="print" style="position: absolute; bottom: 70px; left: 0; width: 100%;">
+                    <button onclick="window.print()"
+                        style="background-color: rgba(101, 101, 233, 0.226);
+                            border-radius: 10px;
+                            cursor: pointer;
+                            padding: 5px 10px;
+                            margin: 0;
+                            border: none;">
+                        Print
+                    </button>
+                </div>
 
                 <div class="logout">
-                    <button>
+                    <button onclick="return confirm('Are you sure you want to log out?')">
                         <div class="icon">
                             <img src="images/logout2.svg" alt="logout icon">
                         </div>
-    
-                        Logout
+                        <a style="text-decoration: none; color: #1D293D;" href="dashboardLogout.php">Logout</a>
                     </button>
-                </div>      
+                </div>       
             </div>
 
             <div class="right">
@@ -371,5 +381,6 @@
 
             </div>
         </div>
+        
 </body>
 </html>
