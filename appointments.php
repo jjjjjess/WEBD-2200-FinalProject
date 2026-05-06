@@ -14,7 +14,7 @@
                 <div class="logo">
                     <img src="images/logo1.svg" alt="logo">
                 </div>
-                MediCare
+                NdataCare
             </div>
             <div class="right">
                 <div class="user">
@@ -76,12 +76,14 @@
                                 <td>
                                     <select id="department" required>
                                         <option placeholder>Select a department</option>
-                                        <option>General Medicine</option>
+                                        <option>Cardiology</option>
                                         <option>Pediatrics</option>
-                                        <option>Gynaecology</option>
-                                        <option>Oncology</option>
-                                        <option>Dentistry</option>
-                                        <option>Cariodology</option>
+                                        <option>Emergency</option>
+                                        <option>General Ward</option>
+                                        <option>Maternity</option>
+                                        <option>Neurology</option>
+                                        <option>Orthopedics</option>
+                                        <option>General Medicine</option>
                                     </select>
                                 </td>
                                 <td>
@@ -102,8 +104,13 @@
                                 </td>
                                 </tr>
                         </table>
-                        <input type="submit" value="Confirm Booking">
-                        <input type="reset" value="Clear">
+                        
+                        <button type="submit" value="Confirm Booking">
+                            Confirm Booking
+                        </button>
+                        <button type="reset" value="Clear">
+                            Clear
+                        </button>
                     </div>
                 </div>
             </div>
