@@ -53,7 +53,7 @@ $totalPendingBills = $pendingBills ? $pendingBills->num_rows : 0;
                 <div class="logo">
                     <img src="images/logo1.svg" alt="logo">
                 </div>
-                MediCare
+                NdataCare
             </div>
             <div class="right">
                 <div class="user">
@@ -74,7 +74,7 @@ $totalPendingBills = $pendingBills ? $pendingBills->num_rows : 0;
                 </ul>  
 
                 <div class="logout">
-                    <button>
+                    <button onclick="return confirm('Are you sure you want to log out?')">
                         <div class="icon">
                             <img src="images/logout2.svg" alt="logout icon">
                         </div>

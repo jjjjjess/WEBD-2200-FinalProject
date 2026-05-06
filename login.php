@@ -24,12 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             else
             {
                 //user entered incorrect password
-                $error="😞 invalid email or password";
+                $error=" invalid email or password";
             }
         }
         else 
         {       // user entered an email that does not exist in our db 
-                $error="😞 invalid email or password";
+                $error=" invalid email or password";
         }
     }
 
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 
                    
                     <label for="userid">Email</label><br>
-                    <input id="userid" type="text" name="userid" title="Please ensure you have written a valid email address" placeholder="example@nthanzi.mw" required><br> 
+                    <input id="userid" type="text" name="userid" title="Please ensure you have written a valid email address" placeholder="example@email.com" required><br> 
                     <label for="passcode">password</label><br>
                     <input type="password" id="passcode" name="passcode" required><br><br>
                     <button type="submit" id="submit" name="submit">sign in</button>
