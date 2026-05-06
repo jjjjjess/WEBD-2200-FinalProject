@@ -51,28 +51,24 @@
                         <form method="POST" action="process_appointment.php">
                         <table>
                             <tr class="t-header">
+                                <td>Patient ID </td>
                                 <td>Full Name</td>
                                 <td>Date of Birth</td>
-                                <td>Patient ID</td>
+                                <td>Department</td>
+                                <td>Date</td>
+                                <td>Time</td>
                             </tr>
 
                             <tr>
+                                <td>
+                                    <input type="text" id="id" required>
+                                </td>
                                 <td>
                                     <input type="text" required id="fname">
                                 </td>
                                 <td>
                                     <input type="date" id="DOB" required>
                                 </td>
-                                <td>
-                                    <input type="text" id="id" required>
-                                </td>
-                            </tr>
-                                <tr class="t-header">
-                                <td>Department</td>
-                                <td>Date</td>
-                                <td>Time</td>
-                                </tr>
-                                <tr>
                                 <td>
                                     <select id="department" required>
                                         <option placeholder>Select a department</option>
