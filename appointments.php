@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="appointments.css">
         <title>Appointments</title>
     </head>
     <body>
@@ -54,6 +55,7 @@
                                 <td>Date of Birth</td>
                                 <td>Patient ID</td>
                             </tr>
+
                             <tr>
                                 <td>
                                     <input type="text" required id="fname">
