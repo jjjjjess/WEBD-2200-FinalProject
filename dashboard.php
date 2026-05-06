@@ -136,8 +136,7 @@ $totalPendingBills = $pendingBills ? $pendingBills->num_rows : 0;
                         </div>
                     </div>
                     <?php endif; ?>
-
-                 
+                
                     <div class="card">
                         <div class="card-left">
                             <div class="title">

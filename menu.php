@@ -13,6 +13,12 @@ echo '
 if ($role === 'Doctor') {
     echo '
     <li>
+    <div class="icon">
+        <img src="images/patients3.svg" alt="patients icon">
+    </div>
+    <a href="patients.php">Patients</a>
+</li>
+    <li>
         <div class="icon">
             <img src="images/doctors.svg" alt="doctors icon">
         </div>
@@ -20,13 +26,21 @@ if ($role === 'Doctor') {
     </li>';
 }
 
-echo '
+if ($role === 'Receptionist') {
+    echo '
 <li>
     <div class="icon">
         <img src="images/patients3.svg" alt="patients icon">
     </div>
     <a href="patients.php">Patients</a>
+</li>
+<li>
+    <div class="icon">
+        <img src="images/calendar2.svg" alt="calendar icon">
+    </div>
+    <a href="appointments.php">Appointments</a>
 </li>';
+}
 
 if ($role === 'Doctor' || $role === 'Nurse') {
     echo '
@@ -55,7 +69,13 @@ if ($role === 'Doctor' || $role === 'Receptionist') {
             <img src="images/billing2.svg" alt="billing icon">
         </div>
         <a href="billing.php">Billing</a>
-    </li>';
+    </li>
+    <li>
+    <div class="icon">
+        <img src="images/calendar2.svg" alt="calendar icon">
+    </div>
+    <a href="appointments.php">Appointments</a>
+</li>';
 }
 
 if ($role === 'Doctor') {

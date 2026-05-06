@@ -100,14 +100,13 @@
                                 </td>
                                 </tr>
                         </table>
-                        <div class="buttons">
+                    
                         <button type="submit" value="Confirm Booking">
                             Confirm Booking
                         </button>
                         <button type="reset" value="Clear">
                             Clear
                         </button>
-                        </div>
                         </form>
                     </div>
                 </div>
