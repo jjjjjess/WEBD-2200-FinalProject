@@ -39,7 +39,7 @@ $output = $conn ->query($medical_sql);
             <div class="top-section">
                 <div class="left">
                     <div class="logo">
-                        <img src="images/logo1.svg" alt="logo">Medicare
+                        <img src="images/logo1.svg" alt="logo">Ndatacare
                     </div>
                 </div>
                 <div class="right">
