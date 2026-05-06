@@ -1,4 +1,4 @@
-<?php
+git<?php
 $host = 'localhost';
 $db   = 'hospital_sys';
 $user = 'root';
