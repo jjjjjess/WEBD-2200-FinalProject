@@ -33,14 +33,13 @@
                 </ul>  
 
                 <div class="logout">
-                    <button>
+                    <button onclick="return confirm('Are you sure you want to log out?')">
                         <div class="icon">
                             <img src="images/logout2.svg" alt="logout icon">
                         </div>
-    
-                        Logout
+                        <a style="text-decoration: none; color: #1D293D;" href="dashboardLogout.php">Logout</a>
                     </button>
-                </div>      
+                </div>     
             </div>
         <div class="appointments">
                     <div class="title">
