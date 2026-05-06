@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     <div id="page">
         <div id="head_container">
             <img alt="Hopspital animation" src="images\logo.svg">
-            <h1>MEDICARE</h1>
+            <h1>NDATACARE</h1>
             <h3>Treating our patients with love and care</h3>
         </div>
 <!-- displaying the error messages for email or password,mixed style-->
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 
                    
                     <label for="userid">Email</label><br>
-                    <input id="userid" type="text" name="userid" title="Please ensure your email contains the company domain '@nthanzi.mw'" placeholder="example@nthanzi.mw" required><br> <!--validation not yet set to regex.pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" might not use it-->
+                    <input id="userid" type="text" name="userid" title="Please ensure you have written a valid email address" placeholder="example@nthanzi.mw" required><br> 
                     <label for="passcode">password</label><br>
                     <input type="password" id="passcode" name="passcode" required><br><br>
                     <button type="submit" id="submit" name="submit">sign in</button>
