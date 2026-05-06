@@ -48,12 +48,12 @@
                     </div>
 
                     <div class="table">
-                        <form method="POST" action="">
+                        <form method="POST" action="process_appointment.php">
                         <table>
                             <tr class="t-header">
                                 <td>Full Name</td>
                                 <td>Date of Birth</td>
-                                <td>Patient ID</td>  
+                                <td>Patient ID</td>
                             </tr>
 
                             <tr>
@@ -67,13 +67,12 @@
                                     <input type="text" id="id" required>
                                 </td>
                             </tr>
-
-                            <tr class="t-header">
+                                <tr class="t-header">
                                 <td>Department</td>
                                 <td>Date</td>
                                 <td>Time</td>
-                            </tr>
-                            <tr>                               
+                                </tr>
+                                <tr>
                                 <td>
                                     <select id="department" required>
                                         <option placeholder>Select a department</option>
@@ -101,9 +100,9 @@
                                         <option>16:00 - 17:00</option>
                                     </select>
                                 </td>
-                            </tr>
+                                </tr>
                         </table>
-                        <input type="submit" value="Save">
+                        <input type="submit" value="Confirm Booking">
                         <input type="reset" value="Clear">
                     </div>
                 </div>
