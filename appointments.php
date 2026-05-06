@@ -14,7 +14,7 @@
                 <div class="logo">
                     <img src="images/logo1.svg" alt="logo">
                 </div>
-                MediCare
+                NdataCare
             </div>
             <div class="right">
                 <div class="user">
@@ -51,12 +51,18 @@
                         <form method="POST" action="process_appointment.php">
                         <table>
                             <tr class="t-header">
+                                <td>Patient ID </td>
                                 <td>Full Name</td>
                                 <td>Date of Birth</td>
-                                <td>Patient ID</td>
+                                <td>Department</td>
+                                <td>Date</td>
+                                <td>Time</td>
                             </tr>
 
                             <tr>
+                                <td>
+                                    <input type="text" id="id" required>
+                                </td>
                                 <td>
                                     <input type="text" required id="fname">
                                 </td>
@@ -64,24 +70,16 @@
                                     <input type="date" id="DOB" required>
                                 </td>
                                 <td>
-                                    <input type="text" id="id" required>
-                                </td>
-                            </tr>
-                                <tr class="t-header">
-                                <td>Department</td>
-                                <td>Date</td>
-                                <td>Time</td>
-                                </tr>
-                                <tr>
-                                <td>
                                     <select id="department" required>
                                         <option placeholder>Select a department</option>
-                                        <option>General Medicine</option>
+                                        <option>Cardiology</option>
                                         <option>Pediatrics</option>
-                                        <option>Gynaecology</option>
-                                        <option>Oncology</option>
-                                        <option>Dentistry</option>
-                                        <option>Cariodology</option>
+                                        <option>Emergency</option>
+                                        <option>General Ward</option>
+                                        <option>Maternity</option>
+                                        <option>Neurology</option>
+                                        <option>Orthopedics</option>
+                                        <option>General Medicine</option>
                                     </select>
                                 </td>
                                 <td>
@@ -102,8 +100,14 @@
                                 </td>
                                 </tr>
                         </table>
-                        <input type="submit" value="Confirm Booking">
-                        <input type="reset" value="Clear">
+                    
+                        <button type="submit" value="Confirm Booking">
+                            Confirm Booking
+                        </button>
+                        <button type="reset" value="Clear">
+                            Clear
+                        </button>
+                        </form>
                     </div>
                 </div>
             </div>

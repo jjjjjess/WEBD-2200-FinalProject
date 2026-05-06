@@ -93,7 +93,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        Nuerology
+                                        Neurology
                                     </td>
                                     <td>
                                         Brain, spinal cord, and nervous system
