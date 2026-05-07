@@ -19,6 +19,7 @@ $medical_sql = "SELECT
                 FROM medical_records m
                 JOIN patients p ON m.patient_id = p.id
                 JOIN doctors d ON m.doctor_id = d.id
+                ORDER BY m.recorded_at DESC
                 LIMIT 10";
 
 $output = $conn ->query($medical_sql);
@@ -37,7 +38,7 @@ $output = $conn ->query($medical_sql);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Departments Page">
-        <title>DEPARTMENTS</title>
+        <title>Medical Records</title>
         <link rel="stylesheet" href="billing.css">
         <link rel="stylesheet" href="dashboard.css">
     </head>
@@ -90,7 +91,7 @@ $output = $conn ->query($medical_sql);
                                     <td>Diagnosis</td>
                                     <td>Treated</td>
                                     <td>Visit Date & Time</td>
-                                    <td>Actions</td>
+                                    <!-- <td>Actions</td> -->
                                 </tr>
                                     <?php while($row = $output->fetch_assoc()){ ?>
                                 <tr>
@@ -99,10 +100,10 @@ $output = $conn ->query($medical_sql);
                                     <td><?php echo $row['diagnosis']; ?></td>
                                     <td><?php echo $row['treatment']; ?></td>
                                     <td><?php echo $row['recorded_at']; ?></td>
-                                    <td class="edit-delete-icons">
+                                    <!-- <td class="edit-delete-icons">
                                         <img src="images/edit.svg" alt="edit image">
                                         <img src="images/bin.svg" alt="bin image">
-                                    </td>
+                                    </td> -->
                                 </tr>
                                 <?php } ?>
                             

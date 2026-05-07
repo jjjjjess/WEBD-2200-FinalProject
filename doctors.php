@@ -204,10 +204,10 @@ $departments_result = mysqli_query($conn, $departments_query);
             </div>
             <div class="right">
                 <div class="user">
-                    Welcome, Dr. Mike Makina
+                    Welcome, <?php echo $_SESSION['username']; ?>
                 </div>
                 <div class="role">
-                    Admin
+                    <?php echo $_SESSION['role']; ?>
                 </div>
             </div>
         </div>
