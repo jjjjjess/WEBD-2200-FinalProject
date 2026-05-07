@@ -11,7 +11,7 @@ $conn = new mysqli(
     $servername,
     $username,
     $password,
-    $dbname
+    $dbname, 3307
 );
 
 

@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php");
+        exit;
+    }
     // require_once('db_connect.php');
     $conn = mysqli_connect('localhost', "root", '', 'hospital_sys',3307);
 
@@ -18,13 +22,18 @@
         b.status,
         b.payment_date
         FROM 
-        billing b JOIN patients p ON b.id = p.id 
-        ORDER BY b.id DESC
+        billing b JOIN patients p ON b.patient_id = p.id 
+        ORDER BY b.payment_date DESC
         LIMIT 5
         ";   
 
     $result = mysqli_query($conn, $sql);
 
+    #event listerner for the add-bill button
+    if(isset($_POST['add-bill'])){
+        header("location:add_bill.php");
+        exit();
+    };
 ?>
 
 <!DOCTYPE html>
@@ -40,13 +49,33 @@
     <?php 
     if(isset($_SESSION['op_success'])){
         if($_SESSION['op_success'] === true){
-            include('alert-messages/operation_success.php');
+            include('alert-messages/delete_success.php');
         } elseif ($_SESSION['op_success'] === false){
-            include('alert-messages/operation_failure.php');
+            include('alert-messages/delete_failure.php');
         };
 
         unset($_SESSION['op_success']);
     };   
+
+    #mistakenly user user-added instead of bill-added, that is in multiple files
+    if(isset($_SESSION['user-added'])){
+        if($_SESSION['user-added'] === true){
+            include('alert-messages/add-user_success.php');
+        } elseif ($_SESSION['user-added'] === false){
+            include('alert-messages/add-user_failure.php');
+        };
+
+        unset($_SESSION['user-added']);
+    };
+     if(isset($_SESSION['bill-updated'])){
+        if($_SESSION['bill-updated'] === true){
+            include('alert-messages/bill-update-suc.php');
+        } elseif ($_SESSION['bill-updated'] === false){
+            include('alert-messages/bill-update-fail.php');
+        };
+
+        unset($_SESSION['bill-updated']);
+    };
     ?>    
     <div class="container">
         <div class="top-section">
@@ -54,15 +83,15 @@
                 <div class="logo">
                     <img src="images/logo1.svg" alt="logo">
                 </div>
-                MediCare
+                NdataCare
             </div>
             <div class="right">
                 <div class="user">
-                    Welcome, Dr. Mike Makina
+                    Welcome,  <?php echo $_SESSION['username']; ?>
                 </div>
 
                 <div class="role">
-                    Admin
+                    <?php echo $_SESSION['role']; ?>
                 </div>
             </div>
         </div>
@@ -74,12 +103,11 @@
                 </ul>  
 
                 <div class="logout">
-                    <button>
+                    <button onclick="return confirm('Are you sure you want to log out?')">
                         <div class="icon">
                             <img src="images/logout2.svg" alt="logout icon">
                         </div>
-    
-                        Logout
+                        <a style="text-decoration: none; color: #1D293D;" href="dashboardLogout.php">Logout</a>
                     </button>
                 </div>      
             </div>
@@ -96,10 +124,10 @@
                             </div>
                         </div>
 
-                        <button class="add-bill">
+                        <form action="" method="POST"><button class="add-bill" name="add-bill">
                             <span>+</span>
                             <span>Add</span>
-                        </button>
+                        </button></form>
                     </div>
                 </div>
 
@@ -145,7 +173,7 @@
                                             <?= $row['payment_date']?>                                            
                                         </td>
                                         <td class="edit-delete-icons">
-                                            <a href="update.php?id<?= $row['id']?>?>"><img src="images/edit.svg" alt="edit image"></a>
+                                            <a href="edit_bill.php?id=<?= $row['id']?>"><img src="images/edit.svg" alt="edit image"></a>
                                             <a href="delete.php?id=<?= $row['id'];?>&table=billing" onclick="return confirm('Delete this record?')">
                                             <img src="images/bin.svg" alt="bin image"></a>
                                         </td>

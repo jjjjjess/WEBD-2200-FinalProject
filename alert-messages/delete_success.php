@@ -4,6 +4,6 @@
     background:lightgreen;
     color:darkgreen;
     height: 2rem;
-    font-size: 1.4rem"> Operation Successiful</p>  
+    font-size: 1.4rem"> Bill deletion Successiful</p>  
     ';
 
