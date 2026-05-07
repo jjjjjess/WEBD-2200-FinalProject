@@ -1,8 +1,8 @@
 <?php
     session_start();
-    // require_once('db_connect.php');
+    require_once('db_connect.php');
 
-    $conn = mysqli_connect('localhost', "root", '', 'hospital_sys',3307);
+    // $conn = mysqli_connect('localhost', "root", '', 'hospital_sys',3307);
 
     // 2. Check if the connection worked
     if (!$conn) {

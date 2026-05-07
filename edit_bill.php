@@ -5,8 +5,8 @@
         header("Location: login.php");
         exit;
     }
-    // require_once('db_connect.php'); 
-    $conn = new mysqli('localhost','root','','hospital_sys',3307);
+    require('db_connect.php'); 
+    // $conn = new mysqli('localhost','root','','hospital_sys',3307);
     
     if($conn->connect_error){
         die("connection_error: ".$conn->connect_error);
