@@ -7,7 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$role = $_SESSION['role'];
 
 $patients = $conn->query("SELECT * FROM patients");
 $doctors = $conn->query("SELECT * FROM doctors");
@@ -200,7 +199,6 @@ $totalPendingBills = $pendingBills ? $pendingBills->num_rows : 0;
                                     </td>
                                 </tr>
                                 <?php endwhile; ?>
-
                                 <?php else: ?>
 
                                 <tr>
